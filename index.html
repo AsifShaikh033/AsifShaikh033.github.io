@@ -1,338 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Asif & ASMA Wedding Invitation</title>
+<meta charset="UTF-8">
+<title>Asif & Asma | Wedding Invitation</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    *{box-sizing:border-box;}
-    body{
-      margin:0;
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-family:'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #ffe2ef, #f7a8c6, #b04cff);
-      overflow:hidden;
-      padding:18px;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-    /* Background glow */
-    .bg-glow{
-      position:absolute;
-      inset:0;
-      filter: blur(45px);
-      opacity:0.55;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.9), transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(255,140,200,0.9), transparent 45%),
-        radial-gradient(circle at 40% 90%, rgba(120,90,255,0.9), transparent 45%);
-      animation: glowMove 8s ease-in-out infinite alternate;
-      z-index:0;
-    }
-    @keyframes glowMove{
-      from{transform: scale(1) translateY(0);}
-      to{transform: scale(1.1) translateY(-12px);}
-    }
+body{
+    height:100vh;
+    font-family:'Poppins',sans-serif;
+    background: radial-gradient(circle,#2b0036,#000);
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+}
 
-    /* Floating hearts */
-    .heart-float{
-      position:absolute;
-      bottom:-30px;
-      font-size: 18px;
-      opacity:0.75;
-      animation: floatUp 6s linear infinite;
-      z-index:1;
-      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
-      user-select:none;
-    }
-    @keyframes floatUp{
-      0%{transform: translateY(0) translateX(0) scale(1); opacity:0;}
-      15%{opacity:0.9;}
-      100%{transform: translateY(-110vh) translateX(40px) scale(1.4); opacity:0;}
-    }
+/* Floating hearts */
+.heart{
+    position:absolute;
+    color:rgba(255,120,160,0.9);
+    font-size:18px;
+    animation:floatUp linear infinite;
+}
+@keyframes floatUp{
+    0%{transform:translateY(110vh);opacity:0;}
+    20%{opacity:1;}
+    100%{transform:translateY(-10vh);opacity:0;}
+}
 
-    /* Card */
-    .card{
-      position:relative;
-      width: 92%;
-      max-width: 470px;
-      border-radius: 28px;
-      padding: 28px 22px;
-      text-align:center;
-      background: rgba(255,255,255,0.18);
-      border: 2px solid rgba(255,255,255,0.35);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.22);
-      overflow:hidden;
-      z-index:2;
-      opacity:0;
-      transform: translateY(25px);
-      animation: cardPop 1s ease forwards;
-      animation-delay: 0.2s;
-    }
-    @keyframes cardPop{
-      to{opacity:1; transform: translateY(0);}
-    }
+/* Slider */
+.slider{
+    position:relative;
+    width:92%;
+    max-width:430px;
+    height:520px;
+}
 
-    /* Shimmer shine */
-    .card::before{
-      content:"";
-      position:absolute;
-      top:-60%;
-      left:-60%;
-      width:200%;
-      height:200%;
-      background: linear-gradient(
-        120deg,
-        transparent 35%,
-        rgba(255,255,255,0.35) 50%,
-        transparent 65%
-      );
-      transform: rotate(18deg);
-      animation: shimmer 3.8s linear infinite;
-      pointer-events:none;
-    }
-    @keyframes shimmer{
-      from{transform: translateX(-30%) rotate(18deg);}
-      to{transform: translateX(30%) rotate(18deg);}
-    }
+/* Card */
+.card{
+    position:absolute;
+    inset:0;
+    border-radius:38px;
+    padding:45px 30px;
+    text-align:center;
+    box-shadow:0 40px 90px rgba(0,0,0,0.6);
+    opacity:0;
+    transform:scale(0.85);
+    transition:all 1.2s ease;
+}
+.card.active{
+    opacity:1;
+    transform:scale(1);
+}
 
-    /* Decorative blobs */
-    .flower{
-      position:absolute;
-      width: 130px;
-      height: 130px;
-      opacity:0.35;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,0,120,0.25), transparent 65%);
-      border-radius: 50%;
-    }
-    .f1{top:-40px; left:-40px;}
-    .f2{bottom:-45px; right:-45px;}
+/* Typography */
+.icon{font-size:48px;margin-bottom:10px;}
+.event{font-size:26px;font-weight:600;margin-bottom:12px;}
+.names{
+    font-family:'Great Vibes',cursive;
+    font-size:48px;
+    margin-bottom:14px;
+}
+.details{font-size:18px;line-height:1.9;}
+.note{margin-top:18px;font-size:15px;opacity:.9}
 
-    /* Intro Loader Screen inside card */
-    .intro{
-      position:relative;
-      padding: 10px 6px 8px;
-      animation: fadeIn 0.8s ease forwards;
-    }
-    .introTitle{
-      font-size: 13px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight:800;
-      color: rgba(30,30,30,0.85);
-    }
-    .bigText{
-      font-family:'Great Vibes', cursive;
-      font-size: 54px;
-      margin: 10px 0 0;
-      color:#b1005c;
-      text-shadow: 0 10px 30px rgba(177,0,92,0.25);
-    }
-    .loaderRing{
-      width: 46px;
-      height: 46px;
-      margin: 18px auto 0;
-      border-radius: 50%;
-      border: 4px solid rgba(255,255,255,0.45);
-      border-top-color: rgba(177,0,92,0.9);
-      animation: spin 0.9s linear infinite;
-      box-shadow: 0 12px 25px rgba(177,0,92,0.18);
-    }
-    @keyframes spin{
-      to{transform: rotate(360deg);}
-    }
+/* Card Themes */
+.bismillah{
+    background:linear-gradient(145deg,#0f2027,#203a43,#2c5364);
+}
+.haldi{
+    background:linear-gradient(145deg,#ffb347,#ffcc33);
+    color:#4a2600;
+}
+.nikah{
+    background:linear-gradient(145deg,#ff416c,#ff4b2b);
+}
+.walima{
+    background:linear-gradient(145deg,#ec008c,#fc6767);
+}
 
-    /* Main content hidden first */
-    .mainContent{
-      display:none;
-      animation: fadeUp 0.9s ease forwards;
-      opacity:0;
-      transform: translateY(12px);
-    }
-
-    /* After intro show */
-    .mainTitle{
-      font-family:'Great Vibes', cursive;
-      font-size: 48px;
-      margin: 6px 0 6px;
-      color:#b1005c;
-      text-shadow: 0 10px 30px rgba(177,0,92,0.25);
-    }
-
-    .namesRow{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      margin-top: 8px;
-      flex-wrap:wrap;
-    }
-    .name{
-      font-size: 28px;
-      font-weight: 900;
-      color:#151515;
-      letter-spacing: 1px;
-    }
-
-    .heart{
-      font-size: 26px;
-      color:#ff0055;
-      animation: heartBeat 1s infinite;
-      filter: drop-shadow(0 10px 20px rgba(255,0,85,0.25));
-    }
-    @keyframes heartBeat{
-      0%,100%{transform: scale(1);}
-      50%{transform: scale(1.25);}
-    }
-
-    .tagline{
-      margin-top: 12px;
-      font-size: 14px;
-      color: rgba(25,25,25,0.85);
-      line-height: 1.5;
-    }
-
-    .events{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .eventBox{
-      padding: 12px 10px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.22);
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: inset 0 0 25px rgba(255,255,255,0.12);
-    }
-    .eventTitle{
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color:#7a0040;
-      margin-bottom: 4px;
-    }
-    .eventDate{
-      font-size: 16px;
-      font-weight: 900;
-      color:#111;
-    }
-
-    .btn{
-      margin-top: 18px;
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      justify-content:center;
-      padding: 12px 18px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #b1005c, #ff2a7a);
-      color:white;
-      text-decoration:none;
-      font-weight:900;
-      box-shadow: 0 16px 35px rgba(177,0,92,0.35);
-      transition: 0.25s;
-    }
-    .btn:hover{
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 22px 50px rgba(177,0,92,0.45);
-    }
-
-    .mini{
-      margin-top: 12px;
-      font-size: 12px;
-      opacity: 0.75;
-      color:#111;
-    }
-
-    @keyframes fadeIn{
-      to{opacity:1;}
-    }
-    @keyframes fadeUp{
-      to{opacity:1; transform: translateY(0);}
-    }
-
-    @media(max-width:420px){
-      .bigText{font-size:48px;}
-      .mainTitle{font-size:44px;}
-      .name{font-size:26px;}
-    }
-  </style>
+/* Urdu */
+.urdu{
+    font-size:28px;
+    margin-top:10px;
+    font-family:serif;
+}
+</style>
 </head>
 <body>
 
-  <div class="bg-glow"></div>
+<!-- Floating hearts -->
+<span class="heart" style="left:10%;animation-duration:14s;">❤️</span>
+<span class="heart" style="left:30%;animation-duration:12s;">💗</span>
+<span class="heart" style="left:50%;animation-duration:16s;">💕</span>
+<span class="heart" style="left:70%;animation-duration:13s;">💖</span>
+<span class="heart" style="left:90%;animation-duration:15s;">❤️</span>
 
-  <!-- floating hearts -->
-  <div class="heart-float" style="left:10%; animation-delay:0s;">❤️</div>
-  <div class="heart-float" style="left:25%; animation-delay:1s;">💖</div>
-  <div class="heart-float" style="left:45%; animation-delay:2s;">❤️</div>
-  <div class="heart-float" style="left:65%; animation-delay:0.7s;">💗</div>
-  <div class="heart-float" style="left:82%; animation-delay:1.8s;">❤️</div>
-  <div class="heart-float" style="left:92%; animation-delay:2.5s;">💞</div>
+<div class="slider">
 
-  <div class="card">
-    <div class="flower f1"></div>
-    <div class="flower f2"></div>
-
-    <!-- Intro Screen -->
-    <div class="intro" id="intro">
-      <div class="introTitle">Wedding Invitation</div>
-      <div class="bigText">You are Invited</div>
-      <div class="loaderRing"></div>
+    <!-- BISMILLAH -->
+    <div class="card bismillah active">
+        <div class="icon">🌙</div>
+        <div class="event">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+        <div class="urdu">اللہ کے نام سے جو نہایت مہربان، رحم کرنے والا ہے</div>
+        <div class="names" style="margin-top:20px;">Asif & Asma</div>
+        <div class="note">With the blessings of Allah</div>
     </div>
 
-    <!-- Main Content -->
-    <div class="mainContent" id="mainContent">
-      <div class="mainTitle">Asif & ASMA Wedding</div>
-
-      <div class="namesRow">
-        <div class="name">Asif</div>
-        <div class="heart">❤️</div>
-        <div class="name">ASMA</div>
-      </div>
-
-      <div class="tagline">
-        With love & blessings,<br/>
-        we invite you to celebrate our beautiful moments ✨
-      </div>
-
-      <div class="events">
-        <div class="eventBox">
-          <div class="eventTitle">Nikah is on</div>
-          <div class="eventDate">06 April</div>
+    <!-- HALDI -->
+    <div class="card haldi">
+        <div class="icon">🌼</div>
+        <div class="event">Haldi Ceremony</div>
+        <div class="names">Asif & Asma</div>
+        <div class="details">
+            📅 5 April<br>
+            ⏰ Evening
         </div>
-
-        <div class="eventBox">
-          <div class="eventTitle">Walima is on</div>
-          <div class="eventDate">07 April</div>
-        </div>
-      </div>
-
-      <a class="btn" href="#" onclick="alert('Asif ❤️ ASMA | Nikah: 06 April | Walima: 07 April')">
-        ✨ Open Invitation
-      </a>
-
-      <div class="mini">💕</div>
+        <div class="note">A joyful beginning filled with colors</div>
     </div>
-  </div>
 
-  <script>
-    // After 2 seconds show main content
-    setTimeout(() => {
-      document.getElementById("intro").style.display = "none";
-      const main = document.getElementById("mainContent");
-      main.style.display = "block";
-      main.style.animation = "fadeUp 0.9s ease forwards";
-    }, 2000);
-  </script>
+    <!-- NIKAH -->
+    <div class="card nikah">
+        <div class="icon">🕌</div>
+        <div class="event">Nikah Ceremony</div>
+        <div class="names">Asif & Asma</div>
+        <div class="details">
+            📅 6 April<br>
+            🕋 After Zohar
+        </div>
+        <div class="note">A sacred bond under Allah’s mercy</div>
+    </div>
+
+    <!-- WALIMA -->
+    <div class="card walima">
+        <div class="icon">✨</div>
+        <div class="event">Walima Ceremony</div>
+        <div class="names">Asif & Asma</div>
+        <div class="details">
+            📅 7 April<br>
+            🍽 Dinner Reception
+        </div>
+        <div class="note">Join us in celebrating love</div>
+    </div>
+
+</div>
+
+<script>
+let cards = document.querySelectorAll('.card');
+let index = 0;
+
+setInterval(()=>{
+    cards[index].classList.remove('active');
+    index = (index + 1) % cards.length;
+    cards[index].classList.add('active');
+},5000);
+</script>
 
 </body>
 </html>
