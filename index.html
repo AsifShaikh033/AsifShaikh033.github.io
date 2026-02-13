@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Wedding Invitation ❤️  </title>
+<title>Royal Wedding Invitation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Great+Vibes&family=Amiri:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
@@ -240,6 +240,66 @@ body::before{
     font-size:22px;
   }
 
+}.nav-buttons{
+  position:absolute;
+  bottom:-75px;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  opacity:0;
+  transition:0.6s ease;
+}
+
+.nav-buttons.show{
+  opacity:1;
+}
+
+/* Premium Button Style */
+.nav-buttons button{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:2px solid #d4af37;
+  background:linear-gradient(145deg,#ffd700,#b8860b);
+  color:#062b1f;
+  font-size:22px;
+  cursor:pointer;
+  box-shadow:
+      0 5px 15px rgba(0,0,0,0.4),
+      0 0 10px rgba(255,215,0,0.5);
+  transition:all 0.3s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Shine Effect */
+.nav-buttons button::after{
+  content:"";
+  position:absolute;
+  top:-100%;
+  left:-100%;
+  width:200%;
+  height:200%;
+  background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,0.5) 50%,transparent 60%);
+  transform:rotate(25deg);
+  transition:0.6s;
+}
+
+.nav-buttons button:hover::after{
+  transform:translateX(100%) rotate(25deg);
+}
+
+/* Hover Animation */
+.nav-buttons button:hover{
+  transform:scale(1.1);
+  box-shadow:
+      0 8px 25px rgba(0,0,0,0.6),
+      0 0 20px rgba(255,215,0,0.9);
+}
+
+/* Press Effect */
+.nav-buttons button:active{
+  transform:scale(0.95);
 }
 
 </style>
@@ -261,10 +321,15 @@ for(let i=0;i<25;i++){
 </script>
 
 <div class="card-container">
+ <div class="nav-buttons" id="navButtons">
+  <button onclick="prevCard()">❮</button>
+  <button onclick="nextCard()">❯</button>
+</div>
+
 
   <!-- Bismillah -->
   <div class="card" id="card1">
-    <div class="logos"> ❤️🤍❤️</div>
+    <div class="logos"> 💞  💎  💞 </div>
     <div class="arabic">﷽</div>
     <h2>Bismillahir Rahmanir Raheem</h2>
     <div class="divider"></div>
@@ -276,25 +341,23 @@ for(let i=0;i<25;i++){
 
   <!-- Haldi -->
   <div class="card" id="card2">
-    <div class="logos">💛✨💛</div>
+    <div class="logos">💛 🌻 💛</div>
     <h2>Haldi Ceremony</h2>
     <div class="divider"></div>
     <div class="details">
       5 April 2025<br>
       Evening Celebration<br><br>
-      Venue: Your Residence
     </div>
   </div>
 
   <!-- Nikah -->
   <div class="card" id="card3">
-    <div class="logos">❤️ 💍 ❤️</div>
+    <div class="logos">🤍 💍 🤍</div>
     <h2>Nikah</h2>
     <div class="divider"></div>
     <div class="names">ER Asif & Asma</div>
     <div class="details">
       6 April 2025 – 8:00 PM<br>
-      Venue: Wedding Hall Name
     </div>
     <div id="countdown"></div>
   </div>
@@ -306,8 +369,8 @@ for(let i=0;i<25;i++){
     <div class="divider"></div>
     <div class="details">
       7 April 2025<br>
-       Reception<br><br>
-      Venue: Banquet Hall
+      Dinner Reception<br><br>
+      Venue: Gandharvapuri
     </div>
   </div>
 
@@ -329,27 +392,49 @@ let cards=[
 ];
 
 let current=0;
+let autoMode=true;
 
 /* Open Invitation Click */
 document.getElementById("openBtn").onclick=function(){
 
-  // Hide button
   this.style.display="none";
-
-  // Start music
   document.getElementById("bgMusic").play();
 
-  // Start automatic card opening
   openCardsAutomatically();
 };
 
 function openCardsAutomatically(){
   if(current < cards.length){
-    cards[current].classList.add("show");
+    showOnlyCard(current);
     current++;
-
-    setTimeout(openCardsAutomatically, 3500); // 3.5 sec delay between cards
+    setTimeout(openCardsAutomatically, 3000);
+  }else{
+    autoMode=false;
+    document.getElementById("navButtons").classList.add("show");
   }
+}
+
+function showOnlyCard(index){
+  cards.forEach(card=>card.classList.remove("show"));
+  cards[index].classList.add("show");
+}
+
+function nextCard(){
+  if(current < cards.length-1){
+    current++;
+  }else{
+    current=0;
+  }
+  showOnlyCard(current);
+}
+
+function prevCard(){
+  if(current > 0){
+    current--;
+  }else{
+    current=cards.length-1;
+  }
+  showOnlyCard(current);
 }
 
 /* Countdown */
