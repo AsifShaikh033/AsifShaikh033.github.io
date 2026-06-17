@@ -1,447 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Elevate Your Business with Expert Laravel Development">
-    <meta name="author" content="Shaikh">
-    <title>Asif Shaikh</title>
-    <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + Meyawo main styles -->
-    <link rel="stylesheet" href="assets/css/meyawo.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Asif Shaikh | Laravel Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#0ea5e9;
+--dark:#0f172a;
+--card:#1e293b;
+--light:#f8fafc;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--dark);
+color:#fff;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+position:fixed;
+width:100%;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(10px);
+z-index:999;
+padding:20px 0;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:var(--primary);
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+nav a:hover{
+color:var(--primary);
+}
+
+.hero{
+padding-top:120px;
+min-height:100vh;
+display:flex;
+align-items:center;
+}
+
+.hero-content{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero-text h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero-text span{
+color:var(--primary);
+}
+
+.hero-text p{
+color:#cbd5e1;
+margin:20px 0;
+line-height:1.8;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:var(--primary);
+color:#fff;
+text-decoration:none;
+border-radius:10px;
+font-weight:600;
+}
+
+.profile{
+text-align:center;
+}
+
+.profile img{
+width:350px;
+border-radius:20px;
+border:4px solid var(--primary);
+}
+
+section{
+padding:100px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+color:var(--primary);
+}
+
+.about{
+background:#111827;
+}
+
+.about p{
+max-width:900px;
+margin:auto;
+text-align:center;
+line-height:1.8;
+color:#d1d5db;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.skill{
+background:var(--card);
+padding:25px;
+text-align:center;
+border-radius:15px;
+transition:.3s;
+}
+
+.skill:hover{
+transform:translateY(-10px);
+}
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:25px;
+}
+
+.project{
+background:var(--card);
+padding:25px;
+border-radius:15px;
+}
+
+.project h3{
+margin-bottom:10px;
+color:var(--primary);
+}
+
+.project p{
+margin-bottom:20px;
+color:#cbd5e1;
+}
+
+.project a{
+display:inline-block;
+padding:10px 20px;
+background:var(--primary);
+color:#fff;
+text-decoration:none;
+border-radius:8px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.stat{
+background:var(--card);
+padding:30px;
+border-radius:15px;
+text-align:center;
+}
+
+.stat h2{
+color:var(--primary);
+font-size:40px;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.service{
+background:var(--card);
+padding:25px;
+border-radius:15px;
+}
+
+.contact{
+background:#111827;
+text-align:center;
+}
+
+.contact p{
+margin:15px 0;
+}
+
+footer{
+background:#020617;
+padding:20px;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+.hero-content{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:42px;
+}
+
+.profile img{
+width:250px;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+nav ul{
+display:none;
+}
+}
+</style>
 </head>
+<body>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+<header>
+<div class="container">
+<nav>
 
-    <!-- Page Navbar -->
-    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
-        <div class="container">
-            <a class="logo" href="#">SHAIKH</a>
-            <ul class="nav">
-                <li class="item">
-                    <a class="link" class="btn btn-primary" href="#home">Home</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#about">About</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#portfolio">Portfolio</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#testmonial">Testimonial</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#blog">Blog</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#contact">Contact</a>
-                </li>
-            </ul>
-            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
-                <div class="hamburger-box">
-                    <div class="hamburger-inner"></div>
-                </div>
-            </a>
-        </div>
-    </nav><!-- End of Page Navbar -->
+<div class="logo">ASIF</div>
 
-    <!-- page header -->
-    <header id="home" class="header">
-        <div class="overlay"></div>
-        <div class="header-content container">
-            <h1 class="header-title">
-                <span class="up">HI!</span>
-                <span class="down">I am Asif Shaikh</span>
-            </h1>
-            <p class="header-subtitle">Senior Software Developer</p>
-            <button class="btn btn-primary">Explore My Projects</button>
-        </div>
-    </header><!-- end of page header -->
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-    <!-- about section -->
-    <section class="section pt-0" id="about">
-        <div class="container text-center">
-            <div class="about">
-                <div class="about-img-holder">
-                    <img src="assets/imgs/as.jpg" class="about-img" style="border-radius:37px;"
-                        alt="Asif Shaikh, PHP Laravel Developer">
-                </div>
-                <div class="about-caption">
-                    <p class="section-subtitle">Who Am I?</p>
-                    <h2 class="section-title mb-3">About Me</h2>
-                    <p>
-                        I am a seasoned PHP Laravel developer with extensive experience in building robust, scalable, and secure web applications. My expertise spans a wide range of projects, from e-commerce platforms and content management systems to custom APIs and enterprise solutions. Proficient in leveraging Laravel's powerful features, I specialize in creating efficient backend systems, seamless front-end integrations, and optimized databases to deliver high-quality digital solutions tailored to client needs.
-                    </p>
-                    <a href="https://wa.me/918319838043" target="_blank" class="btn-rounded btn btn-outline-primary mt-4">
-                        Contact Me
-                    </a>
-                   
-                </div>
-            </div>
-        </div>
-    </section> <!-- end of about section -->
+</nav>
+</div>
+</header>
 
-    <!-- service section -->
-    <section class="section" id="service">
-        <div class="container text-center">
-            <p class="section-subtitle">What I Do?</p>
-            <h6 class="section-title mb-6">Services</h6>
-            <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/pencil-case.svg" class="icon" alt="Laravel Web Development">
-                            <h6 class="title">Laravel Development</h6>
-                            <p class="subtitle">Crafting scalable and secure web applications using Laravel, tailored to your business requirements.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/responsive.svg" class="icon" alt="API Development">
-                            <h6 class="title">API Development</h6>
-                            <p class="subtitle">Building robust and efficient RESTful APIs for seamless integration with front-end and third-party services.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/toolbox.svg" class="icon" alt="Database Optimization">
-                            <h6 class="title">Database Optimization</h6>
-                            <p class="subtitle">Designing and optimizing databases for performance, scalability, and reliability using MySQL and other systems.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/analytics.svg" class="icon" alt="Full Stack Development">
-                            <h6 class="title">Full Stack Development</h6>
-                            <p class="subtitle">Delivering end-to-end solutions with expertise in both backend (Laravel, PHP) and front-end (HTML, CSS, JavaScript) technologies.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- end of service section -->
+<section class="hero">
 
-    <!-- portfolio section -->
-    <section class="section" id="portfolio">
-        <div class="container text-center">
-            <p class="section-subtitle"> </p>
-            <h6 class="section-title mb-6">Portfolio</h6>
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img src="assets/imgs/book.png" class="portfolio-card-img"
-                            alt="img">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Booking System</h5>
-                                    <p class="font-weight-normal">Online Reservation Platform</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/ecommerce.png" class="img-responsive rounded"
-                            alt="img">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Ecommerce</h5>
-                                    <p class="font-weight-normal">Online Shopping Platform</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/lms.png" class="img-responsive rounded"
-                            alt="img">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>LMS</h5>
-                                    <p class="font-weight-normal">Learning Management System</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-            </div><!-- end of row -->
-        </div><!-- end of container -->
-    </section> <!-- end of portfolio section -->
+<div class="container">
 
-    <!-- skills section -->
-<section class="section" id="skills">
-    <div class="container text-center">
-        <p class="section-subtitle">What I Am Good At?</p>
-        <h6 class="section-title mb-6">My Skills</h6>
-        <div class="pricing-wrapper">
-            <!-- Skill Card 1 -->
-            <div class="pricing-card">
-                <div class="pricing-card-header">
-                    <img class="pricing-card-icon" src="assets/imgs/programming.png" alt="Backend Development">
-                </div>
-                <div class="pricing-card-body">
-                    <h6 class="pricing-card-title">Backend Development</h6>
-                    <div class="pricing-card-list">
-                        <p>PHP / Laravel</p>
-                        <p>RESTful APIs</p>
-                        <p>Authentication & Security</p>
-                        <p>Third Party Integration</p>
-                        <p>Performance Optimization</p>
-                    </div>
-                </div>
-            </div>
+<div class="hero-content">
 
-            <!-- Skill Card 2 -->
-            <div class="pricing-card">
-                <div class="pricing-card-header">
-                    <img class="pricing-card-icon" src="assets/imgs/coding.png" alt="Frontend Development">
-                </div>
-                <div class="pricing-card-body">
-                    <h6 class="pricing-card-title">Frontend Development</h6>
-                    <div class="pricing-card-list">
-                        <p>HTML5 / CSS3 / JavaScript</p>
-                        <p>Bootstrap</p>
-                        <p>jQuery</p>
-                        <p>Responsive Design</p>
-                        <p>Cross-Browser Compatibility</p>
-                    </div>
-                </div>
-            </div>
+<div class="hero-text">
 
-            <!-- Skill Card 3 -->
-            <div class="pricing-card">
-                <div class="pricing-card-header">
-                    <img class="pricing-card-icon" src="assets/imgs/layers.png" alt="Database & DevOps">
-                </div>
-                <div class="pricing-card-body">
-                    <h6 class="pricing-card-title">Database</h6>
-                    <div class="pricing-card-list">
-                        <p>MySQL</p>
-                        <p>Database Optimization</p>
-                        <p>Git / GitHub / GitLab</p>
-                        <p>Large data handling</p>
-                        <p>Deployment & CI/CD</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<h1>Hi, I'm <span>Asif Shaikh</span></h1>
+
+<h2>Laravel Developer | PHP Developer</h2>
+
+<p>
+Experienced Laravel Developer with 3+ years of expertise in
+building scalable web applications, ERP systems,
+marketplaces, booking systems, payment gateway integrations,
+REST APIs and SaaS platforms.
+</p>
+
+<a href="#contact" class="btn">Hire Me</a>
+
+</div>
+
+<div class="profile">
+<img src="profile.jpg" alt="Asif">
+</div>
+
+</div>
+
+</div>
+
 </section>
-<!-- end of skills section -->
 
-    
-    <!-- pricing section -->
-    <section class="section" id="pricing" style="display: none;">
-        <div class="container text-center">
-            <p class="section-subtitle">How Much I Charge?</p>
-            <h6 class="section-title mb-6">My Pricing</h6>
-            <div class="pricing-wrapper">
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/scooter.svg" alt="Free Consultation">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Free</h6>
-                        <div class="pricing-card-list">
-                            <p>Initial Consultation</p>
-                            <p>Project Scoping</p>
-                            <p>Basic Support</p>
-                            <p><i class="ti-close"></i></p>
-                            <p><i class="ti-close"></i></p>
-                            <p><i class="ti-close"></i></p>
-                        </div>
-                    </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>0.00</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Get Started</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/shipped.svg" alt="Standard Project">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Standard</h6>
-                        <div class="pricing-card-list">
-                            <p>Custom Web Development</p>
-                            <p>API Integration</p>
-                            <p>Database Design</p>
-                            <p>Basic Maintenance</p>
-                            <p><i class="ti-close"></i></p>
-                            <p><i class="ti-close"></i></p>
-                        </div>
-                    </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>Contact for Quote</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Get Quote</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/startup.svg" alt="Enterprise Solution">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Enterprise</h6>
-                        <div class="pricing-card-list">
-                            <p>Full Stack Development</p>
-                            <p>Advanced API Solutions</p>
-                            <p>Scalable Architecture</p>
-                            <p>Database Optimization</p>
-                            <p>Ongoing Support</p>
-                            <p>Performance Tuning</p>
-                        </div>
-                    </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>Contact for Quote</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Get Quote</a>
-                </div>
-            </div>
-        </div>
-    </section><!-- end of pricing section -->
+<section id="about" class="about">
 
-    <!-- section -->
-    <section class="section-sm bg-primary">
-        <div class="container text-center text-sm-left">
-            <div class="row align-items-center">
-                <div class="col-sm offset-md-1 mb-4 mb-md-0">
-                    <h6 class="title text-light">Want to work with me?</h6>
-                    <p class="m-0 text-light">Always feel free to contact & hire me</p>
-                </div>
-                <div class="col-sm offset-sm-2 offset-md-3">
-                    <a href="https://wa.me/918319838043" target="_blank"
-                     class="btn btn-lg my-font btn-light rounded">Contact Me</a>
-                </div>
-            </div>
-        </div>
-    </section> <!-- end of section -->
+<div class="container">
 
-    <!-- testimonial section -->
-    <section class="section" id="testmonial">
-        <div class="container text-center">
-            <p class="section-subtitle">What Clients Think About Me?</p>
-            <h6 class="section-title mb-6">Testimonials</h6>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar2.jpg" class="testimonial-card-img" alt="Client Testimonial">
-                        </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Asif delivered an exceptional e-commerce platform with seamless performance and great user experience. His expertise in Laravel is unmatched!</p>
-                            <h6 class="testimonial-card-title">John Doe</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar3.jpg" class="testimonial-card-img" alt="Client Testimonial">
-                        </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Working with Asif was a game-changer. His API solutions were robust and well-documented, making integration a breeze.</p>
-                            <h6 class="testimonial-card-title">Jane Smith</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> <!-- end of testimonial section -->
+<h2 class="section-title">About Me</h2>
 
-    <!-- blog section -->
-    <section class="section" id="blog">
-        <div class="container text-center">
-            <p class="section-subtitle">Recent Posts</p>
-            <h6 class="section-title mb-6">Blog</h6>
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="assets/imgs/img-1.jpg" class="blog-card-img" alt="Laravel Best Practices">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">Top Laravel Best Practices for 2025</h5>
-                    <p class="blog-card-caption">
-                        <a href="#">By: Asif Shaikh</a>
-                        <a href="#"><i class="ti-heart text-danger"></i> 234</a>
-                        <a href="#"><i class="ti-comment"></i> 123</a>
-                    </p>
-                    <p>In this article, I share my insights on the best practices for Laravel development, including code organization, security, and performance optimization techniques.</p>
-                    <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="assets/imgs/img-2.jpg" class="blog-card-img" alt="API Development with Laravel">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">Building Scalable APIs with Laravel</h5>
-                    <p class="blog-card-caption">
-                        <a href="#">By: Asif Shaikh</a>
-                        <a href="#"><i class="ti-heart text-danger"></i> 456</a>
-                        <a href="#"><i class="ti-comment"></i> 264</a>
-                    </p>
-                    <p>Learn how to create efficient and secure APIs using Laravel's powerful features, based on my experience working on various API-driven projects.</p>
-                    <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section><!-- end of blog section -->
+<p>
+I am a passionate Laravel Developer with 3+ years of experience in
+Laravel, PHP, MySQL, JavaScript, jQuery and API integrations.
 
-    <!-- contact section -->
-    <section class="section" id="contact">
-        <div class="container text-center">
-            <p class="section-subtitle">How Can You Communicate?</p>
-            <h6 class="section-title mb-5">Contact Me</h6>
-            <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
-                <div class="form-row">
-                    <div class="form-group col-sm-6">
-                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <input type="email" class="form-control" placeholder="Enter Email" required>
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <textarea name="comment" id="comment" rows="6" class="form-control" placeholder="Write Something"></textarea>
-                    </div>
-                    <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section><!-- end of contact section -->
+I have successfully delivered freelance marketplaces,
+School ERP systems, payment solutions,
+service provider portals, booking platforms and custom CRM solutions.
+</p>
 
-    <!-- footer -->
-    <div class="container">
-        <footer class="footer">
-            <p class="mb-0">Copyright
-                <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com"></a>
-            </p>
-            <div class="social-links text-right m-auto ml-sm-auto">
-                <a href="https://www.facebook.com/asif.saikh.988" class="link"><i class="ti-facebook"></i></a>
-                <a href="https://www.instagram.com/er.asifshaikh_/profilecard/?igsh=MTRtNmdkeTIxYXM1bg==" class="link"><i class="ti-instagram"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
-            </div>
-        </footer>
-    </div> <!-- end of page footer -->
+</div>
 
-    <!-- core -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-    <script src="assets/js/meyawo.js"></script>
+</section>
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill">Laravel 11</div>
+<div class="skill">PHP 8+</div>
+<div class="skill">MySQL</div>
+<div class="skill">REST API</div>
+<div class="skill">JavaScript</div>
+<div class="skill">jQuery</div>
+<div class="skill">Bootstrap</div>
+<div class="skill">Git</div>
+<div class="skill">Payment Gateway</div>
+<div class="skill">AWS S3</div>
+<div class="skill">Linux</div>
+<div class="skill">Third Party APIs</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="stats">
+
+<div class="stat">
+<h2>3+</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h2>20+</h2>
+<p>Projects Delivered</p>
+</div>
+
+<div class="stat">
+<h2>10+</h2>
+<p>API Integrations</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Client Satisfaction</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<div class="container">
+
+<h2 class="section-title">Featured Projects</h2>
+
+<div class="projects-grid">
+
+<div class="project">
+<h3>Toda Freelancers</h3>
+<p>Freelancing marketplace platform with job posting, hiring, escrow and project management.</p>
+<a href="https://todafreelancers.com/" target="_blank">Visit Project</a>
+</div>
+
+<div class="project">
+<h3>DPAM Academy</h3>
+<p>School ERP system with attendance, fees, reports, examinations and student management.</p>
+<a href="https://dpamacademy.com/" target="_blank">Visit Project</a>
+</div>
+
+<div class="project">
+<h3>Grow First</h3>
+<p>IndiaMart style service provider and business lead generation platform.</p>
+<a href="https://growfirst.org/" target="_blank">Visit Project</a>
+</div>
+
+<div class="project">
+<h3>Toda Payments</h3>
+<p>Digital payment solution with wallet, deposits, withdrawals and gateway integrations.</p>
+<a href="https://staging.todapayments.com/" target="_blank">Visit Project</a>
+</div>
+
+<div class="project">
+<h3>Justurf</h3>
+<p>Sports turf booking platform with slot booking and online payments.</p>
+<a href="https://justurf.club/" target="_blank">Visit Project</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="container">
+
+<h2 class="section-title">Services</h2>
+
+<div class="services-grid">
+
+<div class="service">
+<h3>Laravel Development</h3>
+<p>Custom Laravel applications and SaaS products.</p>
+</div>
+
+<div class="service">
+<h3>API Development</h3>
+<p>REST API development and third-party integrations.</p>
+</div>
+
+<div class="service">
+<h3>Payment Gateway Integration</h3>
+<p>Cybersource, Pesepay, Ozow, Stripe and custom gateways.</p>
+</div>
+
+<div class="service">
+<h3>ERP & CRM Systems</h3>
+<p>School ERP, CRM and business management solutions.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<h2 class="section-title">Contact Me</h2>
+
+<p>📧 your-email@gmail.com</p>
+
+<p>📱 +91 XXXXX XXXXX</p>
+
+<p>📍 Indore, Madhya Pradesh, India</p>
+
+<a href="#" class="btn">Download Resume</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Asif Shaikh | Laravel Developer
+</p>
+
+</footer>
 
 </body>
-
 </html>
