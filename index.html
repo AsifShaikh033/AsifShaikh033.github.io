@@ -1,1 +1,508 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Asif Shaikh | Laravel Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#0ea5e9;
+--dark:#0f172a;
+--card:#1e293b;
+--light:#f8fafc;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--dark);
+color:#fff;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+position:fixed;
+width:100%;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(10px);
+z-index:999;
+padding:20px 0;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:var(--primary);
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+nav a:hover{
+color:var(--primary);
+}
+
+.hero{
+padding-top:120px;
+min-height:100vh;
+display:flex;
+align-items:center;
+}
+
+.hero-content{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero-text h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero-text span{
+color:var(--primary);
+}
+
+.hero-text p{
+color:#cbd5e1;
+margin:20px 0;
+line-height:1.8;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:var(--primary);
+color:#fff;
+text-decoration:none;
+border-radius:10px;
+font-weight:600;
+}
+
+.profile{
+text-align:center;
+}
+
+.profile img{
+width:350px;
+border-radius:20px;
+border:4px solid var(--primary);
+}
+
+section{
+padding:100px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+color:var(--primary);
+}
+
+.about{
+background:#111827;
+}
+
+.about p{
+max-width:900px;
+margin:auto;
+text-align:center;
+line-height:1.8;
+color:#d1d5db;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.skill{
+background:var(--card);
+padding:25px;
+text-align:center;
+border-radius:15px;
+transition:.3s;
+}
+
+.skill:hover{
+transform:translateY(-10px);
+}
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:25px;
+}
+
+.project{
+background:var(--card);
+padding:25px;
+border-radius:15px;
+}
+
+.project h3{
+margin-bottom:10px;
+color:var(--primary);
+}
+
+.project p{
+margin-bottom:20px;
+color:#cbd5e1;
+}
+
+.project a{
+display:inline-block;
+padding:10px 20px;
+background:var(--primary);
+color:#fff;
+text-decoration:none;
+border-radius:8px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.stat{
+background:var(--card);
+padding:30px;
+border-radius:15px;
+text-align:center;
+}
+
+.stat h2{
+color:var(--primary);
+font-size:40px;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.service{
+background:var(--card);
+padding:25px;
+border-radius:15px;
+}
+
+.contact{
+background:#111827;
+text-align:center;
+}
+
+.contact p{
+margin:15px 0;
+}
+
+footer{
+background:#020617;
+padding:20px;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+.hero-content{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:42px;
+}
+
+.profile img{
+width:250px;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+nav ul{
+display:none;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+
+<div class="logo">ASIF</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<h1>Hi, I'm <span>Asif Shaikh</span></h1>
+
+<h2>Laravel Developer | PHP Developer</h2>
+
+<p>
+Experienced Laravel Developer with 3+ years of expertise in
+building scalable web applications, ERP systems,
+marketplaces, booking systems, payment gateway integrations,
+REST APIs and SaaS platforms.
+</p>
+
+<a href="#contact" class="btn">Hire Me</a>
+
+</div>
+
+<div class="profile">
+<img src="profile.jpg" alt="Asif">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<div class="container">
+
+<h2 class="section-title">About Me</h2>
+
+<p>
+I am a passionate Laravel Developer with 3+ years of experience in
+Laravel, PHP, MySQL, JavaScript, jQuery and API integrations.
+
+I have successfully delivered freelance marketplaces,
+School ERP systems, payment solutions,
+service provider portals, booking platforms and custom CRM solutions.
+</p>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill">Laravel 11</div>
+<div class="skill">PHP 8+</div>
+<div class="skill">MySQL</div>
+<div class="skill">REST API</div>
+<div class="skill">JavaScript</div>
+<div class="skill">jQuery</div>
+<div class="skill">Bootstrap</div>
+<div class="skill">Git</div>
+<div class="skill">Payment Gateway</div>
+<div class="skill">AWS S3</div>
+<div class="skill">Linux</div>
+<div class="skill">Third Party APIs</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="stats">
+
+<div class="stat">
+<h2>3+</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h2>20+</h2>
+<p>Projects Delivered</p>
+</div>
+
+<div class="stat">
+<h2>10+</h2>
+<p>API Integrations</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Client Satisfaction</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<div class="container">
+
+<h2 class="section-title">Featured Projects</h2>
+
+<div class="projects-grid">
+
+<div class="project">
+<h3>Toda Freelancers</h3>
+<p>Freelancing marketplace platform with job posting, hiring, escrow and project management.</p>
+<a href="https://todafreelancers.com/" target="_blank">Visit Project</a>
+</div>
+
+<div class="project">
+<h3>DPAM Academy</h3>
+<p>School ERP system with attendance, fees, reports, examinations and student management.</p>
+<a href="https://dpamacademy.com/" target="_blank">Visit Project</a>
+</div>
+
+<div class="project">
+<h3>Grow First</h3>
+<p>IndiaMart style service provider and business lead generation platform.</p>
+<a href="https://growfirst.org/" target="_blank">Visit Project</a>
+</div>
+
+<div class="project">
+<h3>Toda Payments</h3>
+<p>Digital payment solution with wallet, deposits, withdrawals and gateway integrations.</p>
+<a href="https://staging.todapayments.com/" target="_blank">Visit Project</a>
+</div>
+
+<div class="project">
+<h3>Justurf</h3>
+<p>Sports turf booking platform with slot booking and online payments.</p>
+<a href="https://justurf.club/" target="_blank">Visit Project</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="container">
+
+<h2 class="section-title">Services</h2>
+
+<div class="services-grid">
+
+<div class="service">
+<h3>Laravel Development</h3>
+<p>Custom Laravel applications and SaaS products.</p>
+</div>
+
+<div class="service">
+<h3>API Development</h3>
+<p>REST API development and third-party integrations.</p>
+</div>
+
+<div class="service">
+<h3>Payment Gateway Integration</h3>
+<p>Cybersource, Pesepay, Ozow, Stripe and custom gateways.</p>
+</div>
+
+<div class="service">
+<h3>ERP & CRM Systems</h3>
+<p>School ERP, CRM and business management solutions.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<h2 class="section-title">Contact Me</h2>
+
+<p>📧 your-email@gmail.com</p>
+
+<p>📱 +91 XXXXX XXXXX</p>
+
+<p>📍 Indore, Madhya Pradesh, India</p>
+
+<a href="#" class="btn">Download Resume</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Asif Shaikh | Laravel Developer
+</p>
+
+</footer>
+
+</body>
+</html>
