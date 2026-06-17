@@ -3,505 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Asif Shaikh | Laravel Developer</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <style>
-
-:root{
---primary:#0ea5e9;
---dark:#0f172a;
---card:#1e293b;
---light:#f8fafc;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:var(--dark);
-color:#fff;
-}
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
-
-header{
-position:fixed;
-width:100%;
-background:rgba(15,23,42,.95);
-backdrop-filter:blur(10px);
-z-index:999;
-padding:20px 0;
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:28px;
-font-weight:700;
-color:var(--primary);
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:500;
-}
-
-nav a:hover{
-color:var(--primary);
-}
-
-.hero{
-padding-top:120px;
-min-height:100vh;
-display:flex;
-align-items:center;
-}
-
-.hero-content{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.hero-text h1{
-font-size:60px;
-margin-bottom:10px;
-}
-
-.hero-text span{
-color:var(--primary);
-}
-
-.hero-text p{
-color:#cbd5e1;
-margin:20px 0;
-line-height:1.8;
-}
-
-.btn{
-display:inline-block;
-padding:14px 30px;
-background:var(--primary);
-color:#fff;
-text-decoration:none;
-border-radius:10px;
-font-weight:600;
-}
-
-.profile{
-text-align:center;
-}
-
-.profile img{
-width:350px;
-border-radius:20px;
-border:4px solid var(--primary);
-}
-
-section{
-padding:100px 0;
-}
-
-.section-title{
-text-align:center;
-font-size:42px;
-margin-bottom:50px;
-color:var(--primary);
-}
-
-.about{
-background:#111827;
-}
-
-.about p{
-max-width:900px;
-margin:auto;
-text-align:center;
-line-height:1.8;
-color:#d1d5db;
-}
-
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-}
-
-.skill{
-background:var(--card);
-padding:25px;
-text-align:center;
-border-radius:15px;
-transition:.3s;
-}
-
-.skill:hover{
-transform:translateY(-10px);
-}
-
-.projects-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-gap:25px;
-}
-
-.project{
-background:var(--card);
-padding:25px;
-border-radius:15px;
-}
-
-.project h3{
-margin-bottom:10px;
-color:var(--primary);
-}
-
-.project p{
-margin-bottom:20px;
-color:#cbd5e1;
-}
-
-.project a{
-display:inline-block;
-padding:10px 20px;
-background:var(--primary);
-color:#fff;
-text-decoration:none;
-border-radius:8px;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-}
-
-.stat{
-background:var(--card);
-padding:30px;
-border-radius:15px;
-text-align:center;
-}
-
-.stat h2{
-color:var(--primary);
-font-size:40px;
-}
-
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.service{
-background:var(--card);
-padding:25px;
-border-radius:15px;
-}
-
-.contact{
-background:#111827;
-text-align:center;
-}
-
-.contact p{
-margin:15px 0;
-}
-
-footer{
-background:#020617;
-padding:20px;
-text-align:center;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#08111f;color:#fff}
+#particles-js{position:fixed;inset:0;z-index:-1}
+header{position:fixed;top:0;width:100%;background:rgba(8,17,31,.8);backdrop-filter:blur(10px);z-index:999}
+.container{width:90%;max-width:1200px;margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-size:28px;font-weight:700;color:#38bdf8}
+nav ul{display:flex;gap:25px;list-style:none}
+nav a{color:#fff;text-decoration:none}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:100px}
+.hero-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}
+.badge{display:inline-block;background:#12233d;padding:10px 18px;border-radius:40px;color:#38bdf8}
+h1{font-size:64px;line-height:1.1;margin:15px 0}
+h1 span{color:#38bdf8}
+.hero p{color:#cbd5e1;line-height:1.8}
+.btn{display:inline-block;padding:14px 26px;border-radius:10px;text-decoration:none;margin:15px 10px 0 0}
+.btn1{background:#38bdf8;color:#000}
+.btn2{border:1px solid #38bdf8;color:#38bdf8}
+.card{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:24px}
+.profile{padding:15px}
+.profile img{width:100%;border-radius:20px}
+section{padding:90px 0}
+.title{text-align:center;font-size:42px;color:#38bdf8;margin-bottom:40px}
+.grid{display:grid;gap:25px}
+.stats{grid-template-columns:repeat(4,1fr)}
+.stat,.skill,.project,.service{padding:25px}
+.stat h3{font-size:40px;color:#38bdf8}
+.skills{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.projects{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.project a{color:#38bdf8;text-decoration:none}
+.services{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.contact{text-align:center}
+footer{text-align:center;padding:20px;background:#050b15}
 @media(max-width:768px){
-
-.hero-content{
-grid-template-columns:1fr;
-text-align:center;
+.hero-wrap,.stats{grid-template-columns:1fr}
+nav ul{display:none}
+h1{font-size:42px}
 }
 
-.hero-text h1{
-font-size:42px;
+.bg-shape{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.15;
+    z-index:-1;
+    animation:float 12s ease-in-out infinite;
 }
 
-.profile img{
-width:250px;
+.shape1{
+    width:450px;
+    height:450px;
+    background:#3b82f6;
+    top:-150px;
+    left:-100px;
 }
 
-.stats{
-grid-template-columns:repeat(2,1fr);
+.shape2{
+    width:500px;
+    height:500px;
+    background:#8b5cf6;
+    right:-150px;
+    top:150px;
 }
 
-nav ul{
-display:none;
+.shape3{
+    width:400px;
+    height:400px;
+    background:#06b6d4;
+    bottom:-150px;
+    left:35%;
 }
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-30px);
+    }
+}
+
+.card{
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.2);
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    border-color:
+    rgba(56,189,248,.4);
+
+    box-shadow:
+    0 20px 50px rgba(56,189,248,.12);
 }
 </style>
 </head>
 <body>
 
+    <div class="bg-shape shape1"></div>
+<div class="bg-shape shape2"></div>
+<div class="bg-shape shape3"></div>
+
 <header>
 <div class="container">
 <nav>
-
 <div class="logo">ASIF</div>
-
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#services">Services</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-
 </nav>
 </div>
 </header>
 
 <section class="hero">
-
-<div class="container">
-
-<div class="hero-content">
-
-<div class="hero-text">
-
+<div class="container hero-wrap">
+<div>
+<span class="badge">Laravel Developer • 3+ Years Experience</span>
 <h1>Hi, I'm <span>Asif Shaikh</span></h1>
-
-<h2>Laravel Developer | PHP Developer</h2>
-
-<p>
-Experienced Laravel Developer with 3+ years of expertise in
-building scalable web applications, ERP systems,
-marketplaces, booking systems, payment gateway integrations,
-REST APIs and SaaS platforms.
-</p>
-
-<a href="#contact" class="btn">Hire Me</a>
-
+<h2><span id="typed"></span></h2>
+<p>Laravel Developer specializing in ERP Systems, Fintech Platforms, Payment Gateway Integrations, Marketplaces, Booking Systems and REST APIs.</p>
+<a class="btn btn1" href="#projects">View Projects</a>
+<a class="btn btn2" href="#contact">Hire Me</a>
 </div>
-
-<div class="profile">
-<img src="profile.jpg" alt="Asif">
+<div class="card profile" data-tilt>
+<img src="assets/profile.jpg" alt="Profile">
 </div>
-
 </div>
-
-</div>
-
 </section>
 
-<section id="about" class="about">
-
+<section id="about">
 <div class="container">
-
-<h2 class="section-title">About Me</h2>
-
-<p>
-I am a passionate Laravel Developer with 3+ years of experience in
-Laravel, PHP, MySQL, JavaScript, jQuery and API integrations.
-
-I have successfully delivered freelance marketplaces,
-School ERP systems, payment solutions,
-service provider portals, booking platforms and custom CRM solutions.
-</p>
-
+<h2 class="title">About Me</h2>
+<div class="card" style="padding:30px;text-align:center">
+<p>I am a Laravel Developer with 3+ years of experience delivering scalable applications, payment systems, ERP software, booking platforms and custom business solutions.</p>
 </div>
-
+<div class="grid stats" style="margin-top:30px">
+<div class="card stat"><h3>3+</h3><p>Years</p></div>
+<div class="card stat"><h3>20+</h3><p>Projects</p></div>
+<div class="card stat"><h3>10+</h3><p>API Integrations</p></div>
+<div class="card stat"><h3>100%</h3><p>Dedication</p></div>
+</div>
+</div>
 </section>
 
 <section id="skills">
-
 <div class="container">
-
-<h2 class="section-title">Skills</h2>
-
-<div class="skills-grid">
-
-<div class="skill">Laravel 11</div>
-<div class="skill">PHP 8+</div>
-<div class="skill">MySQL</div>
-<div class="skill">REST API</div>
-<div class="skill">JavaScript</div>
-<div class="skill">jQuery</div>
-<div class="skill">Bootstrap</div>
-<div class="skill">Git</div>
-<div class="skill">Payment Gateway</div>
-<div class="skill">AWS S3</div>
-<div class="skill">Linux</div>
-<div class="skill">Third Party APIs</div>
-
+<h2 class="title">Skills</h2>
+<div class="grid skills">
+<div class="card skill">Laravel 11</div>
+<div class="card skill">PHP</div>
+<div class="card skill">MySQL</div>
+<div class="card skill">REST APIs</div>
+<div class="card skill">Payment Gateways</div>
+<div class="card skill">JavaScript</div>
+<div class="card skill">jQuery</div>
+<div class="card skill">AWS S3</div>
 </div>
-
 </div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="stats">
-
-<div class="stat">
-<h2>3+</h2>
-<p>Years Experience</p>
-</div>
-
-<div class="stat">
-<h2>20+</h2>
-<p>Projects Delivered</p>
-</div>
-
-<div class="stat">
-<h2>10+</h2>
-<p>API Integrations</p>
-</div>
-
-<div class="stat">
-<h2>100%</h2>
-<p>Client Satisfaction</p>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 <section id="projects">
-
 <div class="container">
-
-<h2 class="section-title">Featured Projects</h2>
-
-<div class="projects-grid">
-
-<div class="project">
-<h3>Toda Freelancers</h3>
-<p>Freelancing marketplace platform with job posting, hiring, escrow and project management.</p>
-<a href="https://todafreelancers.com/" target="_blank">Visit Project</a>
+<h2 class="title">Featured Projects</h2>
+<div class="grid projects">
+<div class="card project"><h3>Toda Freelancers</h3><p>Freelancing marketplace.</p><a target="_blank" href="https://todafreelancers.com/">Visit</a></div>
+<div class="card project"><h3>DPAM Academy</h3><p>School ERP platform.</p><a target="_blank" href="https://dpamacademy.com/">Visit</a></div>
+<div class="card project"><h3>Grow First</h3><p>Service marketplace.</p><a target="_blank" href="https://growfirst.org/">Visit</a></div>
+<div class="card project"><h3>Toda Payments</h3><p>Fintech payment solution.</p><a target="_blank" href="https://staging.todapayments.com/">Visit</a></div>
+<div class="card project"><h3>Justurf</h3><p>Sports booking platform.</p><a target="_blank" href="https://justurf.club/">Visit</a></div>
 </div>
-
-<div class="project">
-<h3>DPAM Academy</h3>
-<p>School ERP system with attendance, fees, reports, examinations and student management.</p>
-<a href="https://dpamacademy.com/" target="_blank">Visit Project</a>
 </div>
-
-<div class="project">
-<h3>Grow First</h3>
-<p>IndiaMart style service provider and business lead generation platform.</p>
-<a href="https://growfirst.org/" target="_blank">Visit Project</a>
-</div>
-
-<div class="project">
-<h3>Toda Payments</h3>
-<p>Digital payment solution with wallet, deposits, withdrawals and gateway integrations.</p>
-<a href="https://staging.todapayments.com/" target="_blank">Visit Project</a>
-</div>
-
-<div class="project">
-<h3>Justurf</h3>
-<p>Sports turf booking platform with slot booking and online payments.</p>
-<a href="https://justurf.club/" target="_blank">Visit Project</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<section id="services">
-
+<section>
 <div class="container">
-
-<h2 class="section-title">Services</h2>
-
-<div class="services-grid">
-
-<div class="service">
-<h3>Laravel Development</h3>
-<p>Custom Laravel applications and SaaS products.</p>
+<h2 class="title">Services</h2>
+<div class="grid services">
+<div class="card service">Custom Laravel Development</div>
+<div class="card service">API Development & Integration</div>
+<div class="card service">Payment Gateway Integration</div>
+<div class="card service">ERP & CRM Solutions</div>
 </div>
-
-<div class="service">
-<h3>API Development</h3>
-<p>REST API development and third-party integrations.</p>
 </div>
-
-<div class="service">
-<h3>Payment Gateway Integration</h3>
-<p>Cybersource, Pesepay, Ozow, Stripe and custom gateways.</p>
-</div>
-
-<div class="service">
-<h3>ERP & CRM Systems</h3>
-<p>School ERP, CRM and business management solutions.</p>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<section id="contact" class="contact">
-
-<div class="container">
-
-<h2 class="section-title">Contact Me</h2>
-
-<p>📧 your-email@gmail.com</p>
-
-<p>📱 +91 XXXXX XXXXX</p>
-
-<p>📍 Indore, Madhya Pradesh, India</p>
-
-<a href="#" class="btn">Download Resume</a>
-
+<section id="contact">
+<div class="container contact">
+<h2 class="title">Contact</h2>
+<div class="card" style="padding:30px">
+<p>📞 8319838043</p>
+<p>LinkedIn:</p>
+<p><a style="color:#38bdf8" target="_blank" href="https://www.linkedin.com/in/asif-shaikh-018267201/">Asif Shaikh</a></p>
 </div>
-
+</div>
 </section>
 
-<footer>
+<footer>© 2026 Asif Shaikh | Laravel Developer</footer>
 
-<p>
-© 2026 Asif Shaikh | Laravel Developer
-</p>
-
-</footer>
-
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+<script>
+new Typed("#typed",{strings:["Laravel Developer","API Integration Expert","Fintech Developer"],typeSpeed:60,backSpeed:40,loop:true});
+VanillaTilt.init(document.querySelectorAll("[data-tilt]"),{max:15,speed:400});
+</script>
 </body>
+
 </html>
