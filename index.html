@@ -2,227 +2,353 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asif Shaikh | Laravel Developer</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Asma ❤️</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-html{scroll-behavior:smooth}
-body{background:#08111f;color:#fff}
-#particles-js{position:fixed;inset:0;z-index:-1}
-header{position:fixed;top:0;width:100%;background:rgba(8,17,31,.8);backdrop-filter:blur(10px);z-index:999}
-.container{width:90%;max-width:1200px;margin:auto}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.logo{font-size:28px;font-weight:700;color:#38bdf8}
-nav ul{display:flex;gap:25px;list-style:none}
-nav a{color:#fff;text-decoration:none}
-.hero{min-height:100vh;display:flex;align-items:center;padding-top:100px}
-.hero-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}
-.badge{display:inline-block;background:#12233d;padding:10px 18px;border-radius:40px;color:#38bdf8}
-h1{font-size:64px;line-height:1.1;margin:15px 0}
-h1 span{color:#38bdf8}
-.hero p{color:#cbd5e1;line-height:1.8}
-.btn{display:inline-block;padding:14px 26px;border-radius:10px;text-decoration:none;margin:15px 10px 0 0}
-.btn1{background:#38bdf8;color:#000}
-.btn2{border:1px solid #38bdf8;color:#38bdf8}
-.card{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:24px}
-.profile{padding:15px}
-.profile img{width:100%;border-radius:20px}
-section{padding:90px 0}
-.title{text-align:center;font-size:42px;color:#38bdf8;margin-bottom:40px}
-.grid{display:grid;gap:25px}
-.stats{grid-template-columns:repeat(4,1fr)}
-.stat,.skill,.project,.service{padding:25px}
-.stat h3{font-size:40px;color:#38bdf8}
-.skills{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
-.projects{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.project a{color:#38bdf8;text-decoration:none}
-.services{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.contact{text-align:center}
-footer{text-align:center;padding:20px;background:#050b15}
-@media(max-width:768px){
-.hero-wrap,.stats{grid-template-columns:1fr}
-nav ul{display:none}
-h1{font-size:42px}
-}
+  *{ box-sizing:border-box; }
 
-.bg-shape{
+  body{
+    margin:0;
+    min-height:100vh;
+    overflow-x:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Georgia', 'Segoe UI', serif;
+    background:linear-gradient(160deg,#2b1055,#7597de 60%,#f9c0d8);
+    position:relative;
+  }
+
+  .star{
     position:fixed;
+    width:3px; height:3px;
+    background:#fff;
     border-radius:50%;
-    filter:blur(120px);
-    opacity:.15;
-    z-index:-1;
-    animation:float 12s ease-in-out infinite;
-}
+    opacity:.7;
+    animation:twinkle 2.5s ease-in-out infinite;
+  }
+  @keyframes twinkle{ 50%{ opacity:.1; } }
 
-.shape1{
-    width:450px;
-    height:450px;
-    background:#3b82f6;
-    top:-150px;
-    left:-100px;
-}
+  #stage{
+    position:relative;
+    z-index:1;
+    width:560px;
+    max-width:92vw;
+  }
 
-.shape2{
-    width:500px;
-    height:500px;
-    background:#8b5cf6;
-    right:-150px;
-    top:150px;
-}
+  /* ---- Closed book ---- */
+  #book-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:22px;
+  }
 
-.shape3{
-    width:400px;
-    height:400px;
-    background:#06b6d4;
-    bottom:-150px;
-    left:35%;
-}
+  #book{
+    width:220px;
+    height:300px;
+    cursor:pointer;
+    position:relative;
+    perspective:1200px;
+    filter:drop-shadow(0 20px 30px rgba(0,0,0,.4));
+  }
+  #book .cover{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,#7b2ff7,#b94ee0);
+    border-radius:4px 10px 10px 4px;
+    border-left:8px solid #5a1ec4;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:#fff0fa;
+    text-align:center;
+    transform-origin:left;
+    transition:transform .9s ease;
+    backface-visibility:hidden;
+    z-index:2;
+  }
+  #book.open .cover{
+    transform:rotateY(-150deg);
+  }
+  #book .cover .title{ font-size:22px; letter-spacing:1px; margin-bottom:8px; }
+  #book .cover .name{ font-size:30px; font-weight:bold; }
+  #book .cover .subtitle{ font-size:16px; margin-top:8px; opacity:.85; font-style:italic; }
+  #book .cover .icon{ font-size:46px; margin-bottom:14px; animation:glow 2s ease-in-out infinite; }
+  @keyframes glow{
+    50%{ transform:scale(1.08); filter:brightness(1.3); }
+  }
+  #book .pages{
+    position:absolute;
+    inset:6px 6px 6px 14px;
+    background:#fffaf3;
+    border-radius:2px 8px 8px 2px;
+    z-index:1;
+  }
 
-@keyframes float{
-    0%,100%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(-30px);
-    }
-}
+  #hint{
+    color:#fdeaf6;
+    font-size:16px;
+    letter-spacing:.5px;
+    opacity:.9;
+  }
 
-.card{
-    background:rgba(255,255,255,.04);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:24px;
+  /* ---- Card / steps ---- */
+  #card{
+    display:none;
+    background:#fffaf6;
+    border-radius:22px;
+    padding:48px 40px;
+    text-align:center;
+    box-shadow:0 25px 70px rgba(0,0,0,.4);
+    border:1px solid #eadcf5;
+    position:relative;
+  }
 
-    box-shadow:
-    0 10px 40px rgba(0,0,0,.2);
+  .step{
+    display:none;
+    animation:stepIn .7s ease;
+  }
+  .step.active{ display:block; }
+  @keyframes stepIn{
+    from{ opacity:0; transform:translateY(20px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
 
-    transition:.4s;
-}
+  .step-emoji{ font-size:60px; display:block; margin-bottom:14px; }
+  .step h1{ color:#6a1b9a; font-size:36px; margin:6px 0; letter-spacing:.5px; }
+  .step h2{ color:#9c27b0; font-size:21px; margin:4px 0 18px; font-weight:normal; }
+  .step p{
+    font-size:20px;
+    line-height:1.8;
+    color:#4a3b53;
+    margin:0 auto;
+    max-width:430px;
+  }
 
-.card:hover{
-    transform:translateY(-8px);
+  #page-num{
+    margin-top:24px;
+    color:#b39ddb;
+    font-size:14px;
+    letter-spacing:1px;
+  }
 
-    border-color:
-    rgba(56,189,248,.4);
+  #dots{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin:26px 0 24px;
+  }
+  .dot{
+    width:8px; height:8px;
+    border-radius:50%;
+    background:#e8d9f5;
+    transition:all .3s;
+  }
+  .dot.active{
+    background:#9c27b0;
+    width:22px;
+    border-radius:6px;
+  }
 
-    box-shadow:
-    0 20px 50px rgba(56,189,248,.12);
-}
+  #next-btn, #replay-btn{
+    padding:14px 34px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(135deg,#7b2ff7,#c2185b);
+    color:white;
+    font-size:17px;
+    letter-spacing:.5px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(123,47,247,.35);
+    transition:transform .2s;
+    font-family:inherit;
+  }
+  #next-btn:hover, #replay-btn:hover{ transform:scale(1.05); }
+
+  #final-mark{
+    display:none;
+    font-size:26px;
+    color:#ad1457;
+    margin-top:16px;
+    letter-spacing:.5px;
+  }
+
+  .petal{
+    position:fixed;
+    font-size:22px;
+    animation:drift 9s linear infinite;
+    pointer-events:none;
+    z-index:5;
+    opacity:.9;
+  }
+  @keyframes drift{
+    0%{ transform:translateY(-10vh) translateX(0) rotate(0deg); opacity:0; }
+    10%{ opacity:1; }
+    100%{ transform:translateY(110vh) translateX(40px) rotate(360deg); opacity:0; }
+  }
+
+  @media (max-width:480px){
+    #card{ padding:34px 22px; }
+    .step h1{ font-size:28px; }
+    .step p{ font-size:17px; }
+  }
 </style>
 </head>
 <body>
 
-    <div class="bg-shape shape1"></div>
-<div class="bg-shape shape2"></div>
-<div class="bg-shape shape3"></div>
+<audio id="music" loop>
+  <source src="birthday.mp3" type="audio/mp3">
+</audio>
 
-<header>
-<div class="container">
-<nav>
-<div class="logo">ASIF</div>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
+<div id="stage">
 
-<section class="hero">
-<div class="container hero-wrap">
-<div>
-<span class="badge">Laravel Developer • 3+ Years Experience</span>
-<h1>Hi, I'm <span>Asif Shaikh</span></h1>
-<h2><span id="typed"></span></h2>
-<p>Laravel Developer specializing in ERP Systems, Fintech Platforms, Payment Gateway Integrations, Marketplaces, Booking Systems and REST APIs.</p>
-<a class="btn btn1" href="#projects">View Projects</a>
-<a class="btn btn2" href="#contact">Hire Me</a>
-</div>
-<div class="card profile" data-tilt>
-<img src="assets/profile.jpg" alt="Profile">
-</div>
-</div>
-</section>
+  <div id="book-wrap">
+    <div id="book" onclick="openBook()">
+      <div class="pages"></div>
+      <div class="cover">
+        <div class="icon">📖</div>
+        <div class="title">A Story Written For</div>
+        <div class="name">ASMA</div>
+        <div class="subtitle">My Wife</div>
+      </div>
+    </div>
+    <div id="hint">Tap the book to begin</div>
+  </div>
 
-<section id="about">
-<div class="container">
-<h2 class="title">About Me</h2>
-<div class="card" style="padding:30px;text-align:center">
-<p>I am a Laravel Developer with 3+ years of experience delivering scalable applications, payment systems, ERP software, booking platforms and custom business solutions.</p>
-</div>
-<div class="grid stats" style="margin-top:30px">
-<div class="card stat"><h3>3+</h3><p>Years</p></div>
-<div class="card stat"><h3>20+</h3><p>Projects</p></div>
-<div class="card stat"><h3>10+</h3><p>API Integrations</p></div>
-<div class="card stat"><h3>100%</h3><p>Dedication</p></div>
-</div>
-</div>
-</section>
+  <div id="card">
+    <div id="dots"></div>
 
-<section id="skills">
-<div class="container">
-<h2 class="title">Skills</h2>
-<div class="grid skills">
-<div class="card skill">Laravel 11</div>
-<div class="card skill">PHP</div>
-<div class="card skill">MySQL</div>
-<div class="card skill">REST APIs</div>
-<div class="card skill">Payment Gateways</div>
-<div class="card skill">JavaScript</div>
-<div class="card skill">jQuery</div>
-<div class="card skill">AWS S3</div>
-</div>
-</div>
-</section>
+    <div class="step" data-step="0">
+      <span class="step-emoji">🌷</span>
+      <h1>Dear Asma</h1>
+      <h2>My Wife</h2>
+      <p>Today is a day made just for you. Take a quiet moment, and let yourself feel how truly loved and cherished you are.</p>
+    </div>
 
-<section id="projects">
-<div class="container">
-<h2 class="title">Featured Projects</h2>
-<div class="grid projects">
-<div class="card project"><h3>Toda Freelancers</h3><p>Freelancing marketplace.</p><a target="_blank" href="https://todafreelancers.com/">Visit</a></div>
-<div class="card project"><h3>DPAM Academy</h3><p>School ERP platform.</p><a target="_blank" href="https://dpamacademy.com/">Visit</a></div>
-<div class="card project"><h3>Grow First</h3><p>Service marketplace.</p><a target="_blank" href="https://growfirst.org/">Visit</a></div>
-<div class="card project"><h3>Toda Payments</h3><p>Fintech payment solution.</p><a target="_blank" href="https://staging.todapayments.com/">Visit</a></div>
-<div class="card project"><h3>Justurf</h3><p>Sports booking platform.</p><a target="_blank" href="https://justurf.club/">Visit</a></div>
-</div>
-</div>
-</section>
+    <div class="step" data-step="1">
+      <span class="step-emoji">✨</span>
+      <h1>Happy Birthday</h1>
+      <p>The day you were born, the world gained someone gentle, strong, and beautiful, and my life gained its greatest gift.</p>
+    </div>
 
-<section>
-<div class="container">
-<h2 class="title">Services</h2>
-<div class="grid services">
-<div class="card service">Custom Laravel Development</div>
-<div class="card service">API Development & Integration</div>
-<div class="card service">Payment Gateway Integration</div>
-<div class="card service">ERP & CRM Solutions</div>
-</div>
-</div>
-</section>
+    <div class="step" data-step="2">
+      <span class="step-emoji">👑</span>
+      <h1>My Wife, My Home</h1>
+      <p>Every year with you teaches me more about what love truly means. You are, and will always be, the heart of our home.</p>
+    </div>
 
-<section id="contact">
-<div class="container contact">
-<h2 class="title">Contact</h2>
-<div class="card" style="padding:30px">
-<p>📞 8319838043</p>
-<p>LinkedIn:</p>
-<p><a style="color:#38bdf8" target="_blank" href="https://www.linkedin.com/in/asif-shaikh-018267201/">Asif Shaikh</a></p>
-</div>
-</div>
-</section>
+    <div class="step" data-step="3">
+      <span class="step-emoji">🤲</span>
+      <h1>A Quiet Prayer</h1>
+      <p>May Allah keep you healthy, at peace, and surrounded always by happiness. May every year ahead be gentler than the last.</p>
+    </div>
 
-<footer>© 2026 Asif Shaikh | Laravel Developer</footer>
+    <div class="step" data-step="4">
+      <span class="step-emoji">🌙</span>
+      <h1>My Promise To You</h1>
+      <p>To stand beside you in every season of life, to hold your hand through every storm, and to love you more with every passing day.</p>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <div class="step" data-step="5">
+      <span class="step-emoji">🎂</span>
+      <h1>Happy Birthday, Asma</h1>
+      <p>With all my heart, today and always — I love you.</p>
+      <div id="final-mark">❤ Forever Yours ❤</div>
+    </div>
+
+    <button id="next-btn" onclick="nextStep()">Continue</button>
+    <button id="replay-btn" onclick="replay()" style="display:none;">Read Again</button>
+    <div id="page-num"></div>
+  </div>
+
+</div>
+
 <script>
-new Typed("#typed",{strings:["Laravel Developer","API Integration Expert","Fintech Developer"],typeSpeed:60,backSpeed:40,loop:true});
-VanillaTilt.init(document.querySelectorAll("[data-tilt]"),{max:15,speed:400});
-</script>
-</body>
+const book = document.getElementById("book");
+const card = document.getElementById("card");
+const bookWrap = document.getElementById("book-wrap");
+const steps = document.querySelectorAll(".step");
+const dotsWrap = document.getElementById("dots");
+const nextBtn = document.getElementById("next-btn");
+const replayBtn = document.getElementById("replay-btn");
+const pageNum = document.getElementById("page-num");
+let current = 0;
 
+steps.forEach((_, idx) => {
+  const d = document.createElement("div");
+  d.className = "dot" + (idx === 0 ? " active" : "");
+  dotsWrap.appendChild(d);
+});
+const dots = document.querySelectorAll(".dot");
+
+function openBook(){
+  book.classList.add("open");
+  setTimeout(() => {
+    bookWrap.style.display = "none";
+    card.style.display = "block";
+    showStep(0);
+    createPetals();
+  }, 700);
+}
+
+function showStep(idx){
+  steps.forEach(s => s.classList.remove("active"));
+  dots.forEach(d => d.classList.remove("active"));
+  steps[idx].classList.add("active");
+  dots[idx].classList.add("active");
+  pageNum.textContent = "Page " + (idx + 1) + " of " + steps.length;
+}
+
+let musicStarted = false;
+function nextStep(){
+  if(!musicStarted){
+    document.getElementById("music").play().catch(()=>{});
+    musicStarted = true;
+  }
+  if(current < steps.length - 1){
+    current++;
+    showStep(current);
+    if(current === steps.length - 1){
+      nextBtn.style.display = "none";
+      replayBtn.style.display = "inline-block";
+      document.getElementById("final-mark").style.display = "block";
+    }
+  }
+}
+
+function replay(){
+  document.getElementById("music").play().catch(()=>{});
+  current = 0;
+  showStep(0);
+  nextBtn.style.display = "inline-block";
+  replayBtn.style.display = "none";
+  document.getElementById("final-mark").style.display = "none";
+}
+
+function createPetals(){
+  setInterval(() => {
+    let p = document.createElement("div");
+    p.className = "petal";
+    p.innerHTML = ["🌸","🌷","💮","🌹"][Math.floor(Math.random()*4)];
+    p.style.left = Math.random()*100 + "vw";
+    p.style.animationDuration = (7 + Math.random()*5) + "s";
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 13000);
+  }, 700);
+}
+
+// twinkling stars in background
+for(let i=0; i<40; i++){
+  let s = document.createElement("div");
+  s.className = "star";
+  s.style.left = Math.random()*100 + "vw";
+  s.style.top = Math.random()*100 + "vh";
+  s.style.animationDelay = Math.random()*2.5 + "s";
+  document.body.appendChild(s);
+}
+</script>
+
+</body>
 </html>
